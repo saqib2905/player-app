@@ -1,4 +1,5 @@
 import React from 'react';
+import Stats from './Stats';
 
 const Player = ({onChange, player}) => {
   console.log(player);
@@ -6,10 +7,11 @@ const Player = ({onChange, player}) => {
   <form>
     <select onChange={onChange}>
       <option value="0">Select a player :</option>
-      {player.map((player, idx) => <option value={idx} key={player.player.id}>{`${player.player.name.first}${player.player.name.last}`}</option>
+      {player.map((item, idx) => <option value={item.player.id} key={idx}>{`${item.player.name.first}${item.player.name.last}`}</option>
       )}
     </select>
-  </form> 
+  <Stats /> 
+  </form>
 )}
 
 export default Player;
