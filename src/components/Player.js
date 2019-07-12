@@ -2,7 +2,7 @@ import React from 'react';
 import Stats from './Stats';
 
 const Player = ({onChange, player}) => {
-  console.log(player);
+  //console.log(player);
   return (
   <form>
     <select onChange={onChange}>

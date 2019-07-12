@@ -16,10 +16,16 @@ class App extends Component {
     event.preventDefault();
     const [filterPlayer] = this.state.data.filter((item) => item.player.id === parseInt(event.target.value));
     console.log(filterPlayer);
-    this.setState({playerSelected:filterPlayer})
+    this.setState({playerSelected:filterPlayer});
+    filterPlayer.stats.map( item => {
+      if(item.name === "appearances"){
+        console.log(item.value);
+      }
+      return item.value;
+    })
   }
   render (){
-    console.log(this.state);
+    //console.log(this.state);
     return (
       <div className="App">
         <Player
